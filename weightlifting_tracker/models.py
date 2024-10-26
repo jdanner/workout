@@ -1,5 +1,5 @@
 from datetime import datetime
-from app import db, login_manager
+from weightlifting_tracker.app import db, login_manager
 from flask_login import UserMixin
 
 @login_manager.user_loader
