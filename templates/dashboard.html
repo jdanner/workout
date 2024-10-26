@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Welcome, {{ current_user.username }}!</h1>
+    <h2>Recent Workouts</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Exercise</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Weight</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for workout in workouts %}
+            <tr>
+                <td>{{ workout.date.strftime('%Y-%m-%d') }}</td>
+                <td>{{ workout.exercise.name }}</td>
+                <td>{{ workout.sets }}</td>
+                <td>{{ workout.reps }}</td>
+                <td>{{ workout.weight }}</td>
+                <td>
+                    <a href="{{ url_for('exercise_progress', exercise_id=workout.exercise.id) }}" class="btn btn-sm btn-info">View Progress</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>Personal Records</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Exercise</th>
+                <th>Weight</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pr in personal_records %}
+            <tr>
+                <td>{{ pr.exercise.name }}</td>
+                <td>{{ pr.weight }}</td>
+                <td>{{ pr.date.strftime('%Y-%m-%d') }}</td>
+                <td>
+                    <a href="{{ url_for('exercise_progress', exercise_id=pr.exercise.id) }}" class="btn btn-sm btn-info">View Progress</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('log_workout') }}" class="btn btn-primary">Log New Workout</a>
+{% endblock content %}

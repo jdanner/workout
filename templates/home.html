@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Welcome to the Weightlifting Tracker</h1>
+    {% if current_user.is_authenticated %}
+        <p>Hello, {{ current_user.username }}! Ready to log your workout?</p>
+        <a href="{{ url_for('log_workout') }}" class="btn btn-primary">Log Workout</a>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">View Dashboard</a>
+    {% else %}
+        <p>Please log in to start tracking your workouts.</p>
+        <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+        <a href="{{ url_for('register') }}" class="btn btn-secondary">Register</a>
+    {% endif %}
+{% endblock content %}
