@@ -1,5 +1,5 @@
 from flask import render_template, url_for, flash, redirect, request, jsonify
-from app import app, db, bcrypt
+from weightlifting_tracker.app import app, db, bcrypt
 from models import User, Exercise, Workout, PersonalRecord
 from forms import RegistrationForm, LoginForm, WorkoutForm
 from flask_login import login_user, current_user, logout_user, login_required
