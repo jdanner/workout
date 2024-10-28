@@ -1,4 +1,4 @@
-from weightlifting_tracker import app as application
+from . import app as application
 
 
 if __name__ == "__main__":
