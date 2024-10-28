@@ -1,6 +1,6 @@
-from . import app, db, bcrypt
-from .models import User, Exercise, Workout, PersonalRecord
-from .forms import RegistrationForm, LoginForm, WorkoutForm
+from __init__ import app, db, bcrypt
+from models import User, Exercise, Workout, PersonalRecord
+from forms import RegistrationForm, LoginForm, WorkoutForm
 from flask import render_template, redirect, url_for, flash, request
 from flask_login import login_user, current_user, logout_user, login_required
 
