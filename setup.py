@@ -1,10 +1,16 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name="weightlifting_tracker",
-    packages=find_packages(),
-    include_package_data=True,
+    version="0.0.0",
+    packages=["weightlifting_tracker"],
     install_requires=[
-        'flask',
+        "flask",
+        "flask-sqlalchemy",
+        "flask-login",
+        "flask-bcrypt",
+        "flask-wtf",
+        "email-validator",
+        "gunicorn",
     ],
 )
