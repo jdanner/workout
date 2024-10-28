@@ -1,4 +1,8 @@
-from weightlifting_tracker.app import app as application
+from weightlifting_tracker import app as application
+
+
+if __name__ == "__main__":
+    application.run()
 
 print('WSGI file loaded successfully')
 print('Application object:', application)
