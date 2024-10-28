@@ -3,7 +3,8 @@ from setuptools import setup
 setup(
     name="weightlifting_tracker",
     version="0.0.0",
-    packages=["weightlifting_tracker"],
+    packages=find_packages(where="."),
+    package_dir={"": "."},
     install_requires=[
         "flask",
         "flask-sqlalchemy",
